@@ -4,23 +4,25 @@
     <meta charset="utf-8">
     <title></title>
     <link rel = "stylesheet" href="styles.css">
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">  </head>
   <body>
     <header>
       <h1>Where in the world?</h1>
-      <div>
+      <div class="mode">
+        <img id="IcoMoon"src="moon-regular.svg">
         <button>Dark Mode</button>
       </div>
     </header>
     <div class="main">
       <div class="menu">
         <div class="searchContainer">
+          <input type="text" placeholder="Search for a country...">
         </div>
-        <div class "filterContainer">
+        <div class "filterContainer" placeholder="Search">
         </div>
       </div>
       <div id="countries" class="countries">
-      
+
       </div>
     </div>
     <script src="script.js">
