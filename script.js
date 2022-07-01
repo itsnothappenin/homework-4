@@ -7,14 +7,16 @@ fetch('https://restcountries.com/v3.1/all')
   .then (function(data) {
     let html = '';
     for ( let country of data ) {
-      html += `<div class="container">
-                  <div class="country">
-                    <img src=${country.flags}>
-                    <p>${country.altSpellings[3]}</p>
-                    <p>${country.population}</p>
-                    <p>${country.region}</p>
-                    <p>${country.capital}</p>
-                  <div>
+      html += `<div class="country">
+                <div class="imgDiv">
+                  <img src=${country.flags}>
+                </div>
+                <div class="contentDiv">
+                  <h4>${country.altSpellings[3]}</h4>
+                  <p>Population:${country.population}</p>
+                  <p>Region:${country.region}</p>
+                  <p>Capital:${country.capital}</p>
+                </div>
                </div>`
     }
       countries.insertAdjacentHTML('afterbegin', html);
