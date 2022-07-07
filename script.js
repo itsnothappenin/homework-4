@@ -13,19 +13,15 @@ fetch('https://restcountries.com/v3.1/all')
     return response.json();
   })
   .then (function(data) {
-    // nese.push(data);
+    nese = data
 
-    // const europe = nese.filter(data => data.region === 'Europe');
-    // const africa = data.filter(data => data.region === 'Africa');
-    // const americas = data.filter(data => data.region === 'Americas');
-    // const asia = data.filter(data => data.region === 'Asia');
-    // const oceania = data.filter(data => data.region === 'Oceania');
+
 
 
     let html = '';
     for ( let country of data ) {
       html += `<div id="country" class="country">
-                <a href="file:///C:/Users/u.baghirli/Desktop/hw4/details.html" target='_blank'>
+                <a href="details.html?countryName=${country.name.common}" target='_blank'>
                   <div class="imgDiv">
                     <img src=${country.flags.png}>
                   </div>
@@ -42,7 +38,7 @@ fetch('https://restcountries.com/v3.1/all')
 
       countries.insertAdjacentHTML('afterbegin', html);
   });
-  // console.log(nese);
+  console.log(nese);
   // console.log(europe);
 
   // console.log(africa);
@@ -55,6 +51,8 @@ filterDiv.addEventListener ('click', function(event) {
     filterContainer.classList.toggle('active');
     filterText.classList.toggle('open');
 });
+
+// filterText.addEventListener('click');
 
 document.addEventListener('click', function(event){
   if (!filterDiv.contains(event.target)) {
