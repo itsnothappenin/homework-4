@@ -1,5 +1,4 @@
 
-
 body {
   margin: 0;
   padding: 0;
@@ -175,6 +174,12 @@ input {
 
  .country p {
    margin: 5px;
+
+ }
+
+ .country a {
+   text-decoration: none;
+   color: black;
 
  }
 

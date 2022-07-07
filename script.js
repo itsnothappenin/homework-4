@@ -13,7 +13,7 @@ fetch('https://restcountries.com/v3.1/all')
     return response.json();
   })
   .then (function(data) {
-    nese.push(data);
+    // nese.push(data);
 
     // const europe = nese.filter(data => data.region === 'Europe');
     // const africa = data.filter(data => data.region === 'Africa');
@@ -25,22 +25,24 @@ fetch('https://restcountries.com/v3.1/all')
     let html = '';
     for ( let country of data ) {
       html += `<div id="country" class="country">
-                <div class="imgDiv">
-                  <img src=${country.flags.png}>
-                </div>
-                <div class="contentDiv">
-                  <h4>${country.name.common}</h4>
-                  <p>Population:${country.population}</p>
-                  <p>Region:${country.region}</p>
-                  <p>Capital:${country.capital}</p>
-                </div>
+                <a href="file:///C:/Users/u.baghirli/Desktop/hw4/details.html" target='_blank'>
+                  <div class="imgDiv">
+                    <img src=${country.flags.png}>
+                  </div>
+                  <div class="contentDiv">
+                    <h4>${country.name.common}</h4>
+                    <p>Population:${country.population}</p>
+                    <p>Region:${country.region}</p>
+                    <p>Capital:${country.capital}</p>
+                  </div>
+                </a>
                </div>`
     }
-    // console.log(data);
+    console.log(data);
 
       countries.insertAdjacentHTML('afterbegin', html);
   });
-  console.log(nese);
+  // console.log(nese);
   // console.log(europe);
 
   // console.log(africa);
