@@ -1,18 +1,24 @@
 
-html {
+
+body {
   margin: 0;
   padding: 0;
 
 }
-
 header {
+  box-shadow: 0px 1px 5px 0px #888888;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 50px;
+  width: auto;
+  margin: 0 30px 10px 30px;
+  height: auto;
 }
 
-header h1 {
+header h2 {
   font-family: 'Nunito Sans' ;
 
 }
@@ -22,11 +28,19 @@ header h1 {
   align-items: center;
 }
 
+.mode:hover {
+  cursor: pointer;
+}
+
 .mode button {
   border: none;
   font-family: 'Nunito Sans';
   font-weight: 800;
   background-color: transparent;
+}
+
+.mode button:hover {
+  cursor: pointer;
 }
 
 #IcoMoon {
@@ -35,6 +49,7 @@ header h1 {
 }
 
 .main {
+  width: 100%;
   background-color: hsl(0, 0%, 98%);
 }
 
@@ -42,18 +57,25 @@ header h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: auto;
 }
 
 .searchContainer {
   display: flex;
   align-items: center;
   margin-top: 3%;
-  margin-left: 50px;
-  padding: 15px;
-  width: 20%;
+  margin-left: 30px;
+  padding: 10px;
+  width: 40%;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: white;
+  box-shadow: 0px 1px 5px 0px #888888;
+
+}
+
+.searchContainer.active {
+  border: 1px solid blue;
 }
 
 .searchContainer img {
@@ -70,18 +92,73 @@ input {
   height: 100%;
 }
 
-
 .filterContainer {
-  padding: 15px;
-  width: 20%;
+  margin-top: 3%;
+  margin-right: 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px 0px #888888;
+
+}
+
+.filterInput {
+  padding: 10px;
+  width: auto;
+  border: none;
+  border-radius: 10px;
   background-color: white;
+  margin-top: 3%;
+  font-family: 'Nunito Sans';
+}
+
+.filterDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+}
+
+.filterContainer.active {
+  border: 1px solid blue;
 }
 
 .filterText {
-  display: flex;
-  flex-direction: column;
+  display: none;
+  position: absolute;
+  padding: 15px;
+  margin: 5px 0;
+  width: 10%;
+  list-style: none;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  font-family: 'Nunito Sans';
+  box-shadow: 0px 1px 5px 0px #888888;
+
+}
+
+.filterText.open {
+  display: block;
+  border-radius: 10px;
+  border: 1px solid blue;
+}
+
+.filterText a {
+  text-decoration: none;
+  font-family: 'Nunito Sans';
+  color: black;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.filterText a:hover {
+  background-color: #9dd7e2;
+  background-
+}
+
+.arrow img {
+  width: 15px;
+  height: 15px;
 }
 
  .country {
@@ -89,11 +166,11 @@ input {
    flex-direction: column;
    flex-basis: 20%;
    background-color: white;
-   margin: 40px;
+   margin: 30px;
+   width: 25%;
    border-radius: 5px;
-   height: 100%;
    font-family: 'Nunito Sans';
-   box-shadow: rgba(255, 0, 0, 0.5);
+   box-shadow: 0px 1px 5px 0px #888888;
  }
 
  .country p {
@@ -105,11 +182,19 @@ input {
    height: 50%;
  }
 
+ .imgDiv img {
+   height: 100%;
+   width: 100%;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+ }
+
+
+
  .contentDiv {
    display: flex;
    flex-direction: column;
-   padding:20px;
-   height: 50%;
+   padding: 10px 20px;
  }
 
  .contentDiv p {
@@ -117,6 +202,11 @@ input {
  }
 
 .countries {
+  width: auto;
   display: flex;
   flex-wrap: wrap;
+}
+
+.country:hover {
+  cursor: pointer;
 }
