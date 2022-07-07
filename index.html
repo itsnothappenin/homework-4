@@ -7,29 +7,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">  </head>
   <body>
     <header>
-      <h1>Where in the world?</h1>
-      <div class="mode">
-        <img id="IcoMoon"src="moon-regular.svg">
-        <button>Dark Mode</button>
+      <div class="header">
+        <h2>Where in the world?</h2>
+        <div class="mode">
+          <img id="IcoMoon"src="moon-regular.svg">
+          <button>Dark Mode</button>
+        </div>
       </div>
     </header>
     <div class="main">
       <div class="menu">
-        <div class="searchContainer">
+        <div id="searchContainer" class="searchContainer">
           <img src='magnifying-glass-solid.svg'>
           <input type="text" placeholder="Search for a country...">
         </div>
-        <div class "filterContainer" placeholder="Search">
-          <div class="filterInput">
-            <input type="text" placeholder="Filter by Region">
+        <div id="filterContainer" class="filterContainer" placeholder="Search">
+          <div id="filterDiv" class="filterDiv">
+            <div id="filterInput" class="filterInput">
+              <input id="filterInputID" type="text" placeholder="Filter by Region">
+            </div>
+            <div class="arrow">
+              <img src="angle-down-solid.svg">
+            </div>
           </div>
-          <div class="filterText">
-            <a href="#">Africa</a>
-            <a href="#">America</a>
-            <a href="#">Asia</a>
-            <a href="#">Europe</a>
-            <a href="#">Oceania</a>
-          </div>
+          <ul id="filterText" class="filterText">
+            <li><a href="#">Africa</a></li>
+            <li><a href="#">America</a></li>
+            <li><a href="#">Asia</a></li>
+            <li><a href="#">Europe</a></li>
+            <li><a href="#">Oceania</a></li>
+          </ul>
         </div>
       </div>
       <div id="countries" class="countries">
