@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+
+}
+header {
+  box-shadow: 0px 1px 5px 0px #888888;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  margin: 0 30px 10px 30px;
+  height: auto;
+}
+
+header h2 {
+  font-family: 'Nunito Sans' ;
+
+}
+
+.mode {
+  display: flex;
+  align-items: center;
+}
+
+.mode:hover {
+  cursor: pointer;
+}
+
+.mode button {
+  border: none;
+  font-family: 'Nunito Sans';
+  font-weight: 800;
+  background-color: transparent;
+}
+
+.mode button:hover {
+  cursor: pointer;
+}
+
+#IcoMoon {
+  height: 25px;
+  width: 25px;
+}
+
+main {
+  padding: 0 30px;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.flag {
+  width: 50%;
+}
+
+.details {
+  width: 50%;
+}
