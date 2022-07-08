@@ -5,7 +5,6 @@ const filterDiv = document.getElementById('filterDiv');
 const country = document.getElementById('country');
 const searchContainer = document.getElementById('searchContainer');
 
-// const europe =[];
  var nese;
 
 fetch('https://restcountries.com/v3.1/all')
@@ -13,15 +12,15 @@ fetch('https://restcountries.com/v3.1/all')
     return response.json();
   })
   .then (function(data) {
-    nese = data
+    nese = data;
+    displayCountries(nese)
+  });
 
-
-
-
+  function displayCountries (nese) {
     let html = '';
-    for ( let country of data ) {
+    for ( let country of nese ) {
       html += `<div id="country" class="country">
-                <a href="details.html?countryName=${country.name.common}" target='_blank'>
+                <a href="details.html?countryName=${country.name.common}">
                   <div class="imgDiv">
                     <img src=${country.flags.png}>
                   </div>
@@ -34,17 +33,9 @@ fetch('https://restcountries.com/v3.1/all')
                 </a>
                </div>`
     }
-    console.log(data);
-
-      countries.insertAdjacentHTML('afterbegin', html);
-  });
-  console.log(nese);
-  // console.log(europe);
-
-  // console.log(africa);
-  // console.log(americas);
-  // console.log(asia);
-  // console.log(oceania);
+    // console.log(nese);
+    countries.insertAdjacentHTML('afterbegin', html);
+  }
 
 
 filterDiv.addEventListener ('click', function(event) {
@@ -52,7 +43,21 @@ filterDiv.addEventListener ('click', function(event) {
     filterText.classList.toggle('open');
 });
 
-// filterText.addEventListener('click');
+filterText.addEventListener('click', function(event) {
+    if (event.target.id == '1') {
+      displayCountries(nese.filter(data => data.region === 'Africa'));
+    } else if (event.target.id == '2') {
+      displayCountries(nese.filter(data => data.region === 'Americas'));
+    } else if (event.target.id == '3') {
+      displayCountries(nese.filter(data => data.region === 'Asia'));
+    } else if (event.target.id == '4') {
+      displayCountries(nese.filter(data => data.region === 'Europe'));
+    } else if (event.target.id == '5') {
+      displayCountries(nese.filter(data => data.region === 'Oceania'));
+    } else if (event.target.id == '0') {
+      displayCountries(nese);
+    }
+});
 
 document.addEventListener('click', function(event){
   if (!filterDiv.contains(event.target)) {
@@ -70,10 +75,3 @@ document.addEventListener('click', function(event){
 searchContainer.addEventListener('click', function(event) {
   searchContainer.classList.add('active');
 });
-
-// document.addEventListener('click', function(event) {
-//   if (event.target.classList.contains('.country')) {
-//     // window.location = "file:///C:/Users/USER/Desktop/hw4/details.html";
-//
-//   }
-// });

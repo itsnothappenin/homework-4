@@ -215,3 +215,11 @@ input {
 .country:hover {
   cursor: pointer;
 }
+
+.filterText li:hover {
+  background-color: #bde0fe;
+}
+
+li a {
+  pointer-events: none;
+}

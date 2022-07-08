@@ -88,5 +88,22 @@ main {
 .details {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  margin-top: 5%;
   width: 50%;
+}
+
+.col1 {
+  font-family: 'Nunito Sans';
+  font-weight: 600;
+}
+
+.col1 h3 {
+  font-size: 30px;
+}
+
+.col2 {
+  font-family: 'Nunito Sans';
+  font-weight: 600;
+
 }
