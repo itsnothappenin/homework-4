@@ -33,7 +33,7 @@ fetch('https://restcountries.com/v3.1/all')
                 </a>
                </div>`
     }
-    // console.log(nese);
+  console.log(nese);
     countries.insertAdjacentHTML('afterbegin', html);
   }
 
