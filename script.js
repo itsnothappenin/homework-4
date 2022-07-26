@@ -4,8 +4,8 @@ const filterText = document.getElementById('filterText');
 const filterDiv = document.getElementById('filterDiv');
 const country = document.getElementById('country');
 const searchContainer = document.getElementById('searchContainer');
-
- var nese;
+const input = document.getElementById('myInput')
+var nese = [];
 
 fetch('https://restcountries.com/v3.1/all')
   .then (function(response) {
@@ -33,7 +33,6 @@ fetch('https://restcountries.com/v3.1/all')
                 </a>
                </div>`
     }
-  console.log(nese);
     countries.insertAdjacentHTML('afterbegin', html);
   }
 
@@ -74,4 +73,19 @@ document.addEventListener('click', function(event){
 
 searchContainer.addEventListener('click', function(event) {
   searchContainer.classList.add('active');
+});
+
+searchContainer.addEventListener('input', function(event) {
+  event.preventDefault();
+  const searched = input.value;
+  fetch(`https://restcountries.com/v3.1/name/${searched}`)
+  .then (function(response) {
+    return response.json();
+  })
+  .then (function(data) {
+    console.log(data)
+    nese = data;
+    displayCountries(nese)
+
+  });
 });
